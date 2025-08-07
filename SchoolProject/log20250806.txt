@@ -1,0 +1,6 @@
+2025-08-06 18:19:00.230 +05:30 [INF] Hello, Serilog!
+2025-08-06 18:19:00.263 +05:30 [ERR] Unhandled exception
+System.InvalidOperationException: Oops...
+   at SchoolProject.Program.Main(String[] args) in /Users/kishanchudasama/PrioxisTech/SchoolProject/SchoolProject/Program.cs:line 42
+2025-08-06 18:20:31.166 +05:30 [INF] In StudentController Index Method
+2025-08-06 18:20:31.195 +05:30 [INF] In StudentRepository.GetFilteredStudents
