@@ -4,7 +4,9 @@ using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Models.Models.ResponseModel;
 using Models.Models.School;
+using Models.Models.SpDbContext;
 using Models.Models.ValidatorModel;
+using SchoolProject.Helper;
 using Service.Repository.Implementation;
 using Service.Repository.Interface;
 using Serilog;
@@ -47,6 +49,30 @@ public class Program
                     .SingleOrDefault(assembly => assembly.GetName().Name == typeof(Program).Assembly.GetName().Name));
 
             });
+        builder.Services.AddDbContext<SchoolDbContext>(options =>
+        {
+            options.UseSqlServer(connectionString, sqlServerOptionsAction: sqlOptions =>
+            {
+
+            });
+            options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            options.EnableSensitiveDataLogging(true);
+        }, ServiceLifetime.Transient);
+
+        builder.Services.AddDbContext<SchoolManagementSpContext>(options =>
+        {
+            options.UseSqlServer(connectionString, sqlServerOptionsAction: sqlOptions =>
+            {
+
+                sqlOptions.EnableRetryOnFailure();
+
+            });
+            options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            options.EnableSensitiveDataLogging(true);
+        }, ServiceLifetime.Transient);
+        // Register the UserService
+        UnitOfWorkServiceCollectionExtentions.AddUnitOfWork<SchoolDbContext>(builder.Services);
+
 
         var app = builder.Build();
 

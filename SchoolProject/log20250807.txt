@@ -241,3 +241,11 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2025-08-07 14:25:35.338 +05:30 [INF] ::::::End of Middleware::::
 2025-08-07 14:26:24.687 +05:30 [INF] ::::In Middleware::::
 2025-08-07 14:26:24.969 +05:30 [INF] ::::::End of Middleware::::
+2025-08-07 15:55:45.145 +05:30 [INF] ::::In Middleware::::
+2025-08-07 15:55:45.343 +05:30 [INF] In StudentController Index Method
+2025-08-07 15:55:45.344 +05:30 [INF] In StudentRepository.GetFilteredStudents
+2025-08-07 15:55:46.143 +05:30 [INF] ::::::End of Middleware::::
+2025-08-07 17:04:05.727 +05:30 [INF] ::::In Middleware::::
+2025-08-07 17:04:05.931 +05:30 [INF] In StudentController Index Method
+2025-08-07 17:04:05.933 +05:30 [INF] In StudentRepository.GetFilteredStudents
+2025-08-07 17:04:06.739 +05:30 [INF] ::::::End of Middleware::::
